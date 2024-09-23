@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 2_card
   m_EditorClassIdentifier: 
   cardName: Two
-  cardPair: Two
+  pairName: Eight
   cardImage: {fileID: 21300000, guid: 0c3b8f1c5756a6847aaf556c6b7e389b, type: 3}

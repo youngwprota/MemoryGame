@@ -2299,6 +2299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6313ec2edb664a4494b10e4ae4c0d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 906212869225946535, guid: 057617ef67185bf418f4e4d8df82e87e, type: 3}
+  collection: {fileID: 11400000, guid: 0ef438260d3027f429b9b715ca6defb1, type: 2}
+  easyDatas: {fileID: 0}
+  normalDatas: {fileID: 0}
+  hardDatas: {fileID: 0}
 --- !u!1 &1960049168
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: creeper_card
   m_EditorClassIdentifier: 
   cardName: Creeper
-  cardPair: Creeper
+  pairName: Creeper
   cardImage: {fileID: 21300000, guid: 4c8764a3841ebf54982b49d2aad34e4b, type: 3}

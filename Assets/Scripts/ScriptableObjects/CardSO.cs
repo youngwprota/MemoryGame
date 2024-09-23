@@ -7,6 +7,13 @@ using UnityEngine.U2D;
 public class CardSO : ScriptableObject
 {
     public string cardName;
-    public string cardPair;
+    public string pairName;
     public Sprite cardImage;
+
+    public bool IsPair(string givenName)
+    {
+        givenName = givenName.ToLower();
+        Debug.LogError($"Card pairName: {givenName}" + "   " + pairName.ToLower());
+        return (givenName == pairName.ToLower());
+    }
 }
