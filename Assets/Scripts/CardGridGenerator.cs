@@ -6,8 +6,8 @@ public class CardGridGenerator
 {
     CardCollectionSO cardCollection;
 
-    Vector2[] positions;
-    List<GameObject> cards;
+    // Vector2[] positions;
+    // List<GameObject> cards;
 
     List<int> availableImageIndexes;
     List<int> availablePositionIndexes;
@@ -26,6 +26,7 @@ public class CardGridGenerator
     public CardSO GetRandomAvailableCardSO()
     {
         int random = UnityEngine.Random.Range(0, this.availableImageIndexes.Count);
+        Debug.Log(availableImageIndexes.Count);
         int randomIndex = availableImageIndexes[random];
 
         availableImageIndexes.RemoveAt(random);
@@ -37,7 +38,7 @@ public class CardGridGenerator
     {
         foreach (CardSO card in cardCollection.cards)
         {
-            Debug.LogError($"Checking card: {card.pairName} against {cardPairName}");
+            // Debug.LogError($"Checking card: {card.pairName} against {cardPairName}");
             if (card.IsPair(cardPairName))
             {
                 return card;

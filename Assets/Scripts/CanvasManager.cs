@@ -13,7 +13,7 @@ public class CanvasManager : MonoBehaviour
     public GameDatasSO hardData;
 
     GameDatasSO gameDatas;
-    CardGridGenerator cardGridGenerator;
+    public CardGridGenerator cardGridGenerator;
 
     List<CardController> cardControllers;
 
@@ -27,7 +27,7 @@ public class CanvasManager : MonoBehaviour
         SetCardGridLayoutParams();
         GenerateCards();
 
-        Debug.Log("BAAAAAACK^" + gameDatas.background);
+        // Debug.Log("BAAAAAACK^" + gameDatas.background);
 
         GameManager gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
         gameManager.CardCount = gameDatas.rows * gameDatas.columns;
@@ -71,7 +71,6 @@ public class CanvasManager : MonoBehaviour
         {
             GameObject card = Instantiate(cardPrefab, this.transform);
             card.transform.name = "Card (" + i.ToString() + ")";
-
             cardControllers.Add(card.GetComponent<CardController>());
         }
 
@@ -93,23 +92,25 @@ public class CanvasManager : MonoBehaviour
     {
         int index = cardGridGenerator.GetRandomCardPositionIndex();
         CardController cardObject = cardControllers[index];
-        Debug.Log($"Card Controllers Count: {cardControllers.Count}");
-        if (index < cardControllers.Count)
-        {
-            Debug.Log($"Card Object at Index {index}: {cardControllers[index]}");
-        }
-        else
-        {
-            Debug.LogWarning($"Index {index} is out of range for Card Controllers.");
-        }
-        if (randomCard == null)
-        {
-            Debug.LogError("Random Card is null!");
-        }
-        if (gameDatas.background == null)
-        {
-            Debug.LogError("Background sprite is null!");
-        }
+        // Debug.Log($"Card Controllers Count: {cardControllers.Count}");
+        // if (index < cardControllers.Count)
+        // {
+        //     Debug.Log($"Card Object at Index {index}: {cardControllers[index]}");
+        // }
+        // else
+        // {
+        //     Debug.LogWarning($"Index {index} is out of range for Card Controllers.");
+        // }
+        // if (randomCard == null)
+        // {
+        //     Debug.LogError("Random Card is null!");
+        // }
+        // if (gameDatas.background == null)
+        // {
+        //     Debug.LogError("Background sprite is null!");
+        // }
         cardObject.SetCardDatas(gameDatas.background, randomCard);
     }
 }
+
+

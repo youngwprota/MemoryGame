@@ -13,7 +13,7 @@ public class CardSO : ScriptableObject
     public bool IsPair(string givenName)
     {
         givenName = givenName.ToLower();
-        Debug.LogError($"Card pairName: {givenName}" + "   " + pairName.ToLower());
+        // Debug.LogError($"Card pairName: {givenName}" + "   " + pairName.ToLower());
         return (givenName == pairName.ToLower());
     }
 }

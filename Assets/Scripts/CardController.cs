@@ -40,6 +40,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler
         hideAwayState = new HideAwayState(this);
 
         actualState = backState;
+        Canvas.ForceUpdateCanvases();
     }
 
     void Update()
