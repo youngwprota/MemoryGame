@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2062798f94f414193edee5c719824c, type: 3}
-  m_Name: normalDifficulty
+  m_Script: {fileID: 11500000, guid: 8c3a2be6cde07dc43b5a19e6e5c0cd6d, type: 3}
+  m_Name: 6_card 1
   m_EditorClassIdentifier: 
-  difficulty: 1
-  rows: 8
-  columns: 8
-  background: {fileID: 21300000, guid: f04026df98f4532449879d6ccba234b7, type: 3}
-  preferredTopBottomPadding: 20
-  spacing: {x: 40, y: 40}
+  cardName: Six
+  pairName: Four
+  cardImage: {fileID: 21300000, guid: 3a4ac31a9dc3c9b44913a1d08153c843, type: 3}
