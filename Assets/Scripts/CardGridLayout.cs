@@ -30,7 +30,7 @@ public class CardGridLayout : LayoutGroup
             cardHeight = cardWidth;
         }
 
-        cardSize = new Vector2(cardWidth, cardHeight);
+        cardSize = new Vector2(2.5f * cardWidth, 2.5f * cardHeight);
 
         //Debug.Log("parentWidth: " + parentWigth + ", parentHeight: " + parentHigth);
         //Debug.Log("cardWidth: " + cardWidth + ", cardHeight: " + cardHeight);

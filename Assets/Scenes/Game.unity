@@ -1212,13 +1212,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 50
     m_Right: 0
-    m_Top: 117
-    m_Bottom: 117
+    m_Top: 119
+    m_Bottom: 119
   m_ChildAlignment: 0
   rows: 4
   columns: 5
-  spacing: {x: 50, y: 50}
-  cardSize: {x: 84, y: 84}
+  spacing: {x: 70, y: 70}
+  cardSize: {x: 68, y: 68}
   preferredTopPadding: 50
 --- !u!114 &1945382992
 MonoBehaviour:

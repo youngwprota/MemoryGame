@@ -5,8 +5,6 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    //public UIController uiController;
-
     GameState gameState;
 
     public CardSelectionState cardSelectionState;
@@ -19,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] selectedCards;
 
     int cardCount;
-    //int movesCount;
+    private bool canSelect = true;  // Новый флаг для управления выбором карт
 
     public int CardCount
     {
@@ -35,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //movesCount = 0;
         selectedCards = new GameObject[2];
         selectedCards[0] = null;
         selectedCards[1] = null;
@@ -74,8 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void SetSelectedCard(GameObject selectedCard)
     {
-        //movesCount++;
-        //uiController.ChangeMovesCount(movesCount);
+        if (!canSelect) return; 
 
         if (selectedCards[0] == null)
         {
@@ -92,9 +88,18 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                TransitionState(memorizeCardsState);
+                StartCoroutine(WaitAndMemorizeCards()); 
             }
         }
+    }
+
+    private IEnumerator WaitAndMemorizeCards()
+    {
+        canSelect = false;  
+        yield return new WaitForSeconds(1.5f);  
+
+        TransitionState(memorizeCardsState);
+        canSelect = true; 
     }
 
     public void RemoveSelectedCards()
@@ -110,4 +115,10 @@ public class GameManager : MonoBehaviour
 
         return first != null && second != null && first.cardName == second.pairName && first.pairName == second.cardName;
     }
+
+    public bool CanSelectCards
+    {
+        get { return canSelect; }
+    }
+
 }

@@ -29,7 +29,7 @@ public class CardGridGenerator
         Debug.Log(availableImageIndexes.Count);
         int randomIndex = availableImageIndexes[random];
 
-        availableImageIndexes.RemoveAt(random);
+        availableImageIndexes.RemoveAt(random);     
 
         return cardCollection.cards[randomIndex];
     }

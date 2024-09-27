@@ -9,11 +9,9 @@ public class CardController : MonoBehaviour, IPointerDownHandler
 {
     public Image frontFace;
     public Image backFace;
-
     public CardSO cardType;
 
     GameManager gameManager;
-    //public AudioManager audioManager;
 
     public CardState actualState;
     public FrontState frontState;
@@ -24,14 +22,12 @@ public class CardController : MonoBehaviour, IPointerDownHandler
     public HideAwayState hideAwayState;
 
     float cardScale = 1.0f;
-    float flipSpeed = 2.0f;
+    float flipSpeed = 5.0f;
     float flipTolerance = 0.05f;
 
     void Start()
     {
         gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
-        //heartsManager = (HeartsManager)FindObjectOfType(typeof(HeartsManager));
-        //audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
 
         frontState = new FrontState(this);
         backState = new BackState(this);
@@ -40,7 +36,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler
         hideAwayState = new HideAwayState(this);
 
         actualState = backState;
-        Canvas.ForceUpdateCanvases();
     }
 
     void Update()
@@ -53,11 +48,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler
         this.cardType = card;
 
         frontFace.sprite = card.cardImage;
-
-        if (background == null)
-        {
-            Debug.Log("BACKGROUND!");
-        }
         backFace.sprite = background;
 
         backFace.gameObject.SetActive(true);
@@ -88,7 +78,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler
         cardImage.color = newColor;
     }
 
-
     public void ChangeScale(float newScale)
     {
         this.transform.localScale = new Vector3(newScale, 1, 1);
@@ -96,12 +85,14 @@ public class CardController : MonoBehaviour, IPointerDownHandler
 
     public void Flip()
     {
-        //Hide background
+        // Проверка: можно ли сейчас выбирать карты
+        if (!gameManager.CanSelectCards) return;
+
         if (backFace.gameObject.activeSelf == true)
         {
-            cardScale = cardScale - (flipSpeed * Time.deltaTime);
+            cardScale -= flipSpeed * Time.deltaTime;
             ChangeScale(cardScale);
-            //Show foreground
+
             if (flipTolerance > cardScale)
             {
                 SwitchFaces();
@@ -109,26 +100,25 @@ public class CardController : MonoBehaviour, IPointerDownHandler
         }
         else
         {
-            cardScale = cardScale + (flipSpeed * Time.deltaTime);
+            cardScale += flipSpeed * Time.deltaTime;
             ChangeScale(cardScale);
 
             if (cardScale >= 1.0f)
             {
                 ChangeScale(1.0f);
                 TransitionState(this.frontState);
-                gameManager.SetSelectedCard(this.gameObject);
+                gameManager.SetSelectedCard(this.gameObject);  // Сигнализируем GameManager о выборе карты
             }
         }
     }
 
     public void BackFlip()
     {
-        //Hide foreground
         if (backFace.gameObject.activeSelf == false)
         {
-            cardScale = cardScale - (flipSpeed * Time.deltaTime);
+            cardScale -= flipSpeed * Time.deltaTime;
             ChangeScale(cardScale);
-            //Show foreground
+
             if (flipTolerance > cardScale)
             {
                 SwitchFaces();
@@ -136,7 +126,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler
         }
         else
         {
-            cardScale = cardScale + (flipSpeed * Time.deltaTime);
+            cardScale += flipSpeed * Time.deltaTime;
             ChangeScale(cardScale);
 
             if (cardScale >= 1.0f)
@@ -149,6 +139,10 @@ public class CardController : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        actualState.OnClickAction();
+        // Проверка на возможность взаимодействия с картами
+        if (gameManager.CanSelectCards)
+        {
+            actualState.OnClickAction();
+        }
     }
 }
