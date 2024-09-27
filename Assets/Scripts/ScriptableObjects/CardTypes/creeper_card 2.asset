@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3a2be6cde07dc43b5a19e6e5c0cd6d, type: 3}
+  m_Name: creeper_card 2
+  m_EditorClassIdentifier: 
+  cardName: Creeper
+  pairName: Creeper
+  cardImage: {fileID: 21300000, guid: 4c8764a3841ebf54982b49d2aad34e4b, type: 3}

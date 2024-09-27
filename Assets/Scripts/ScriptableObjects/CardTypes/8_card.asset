@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3a2be6cde07dc43b5a19e6e5c0cd6d, type: 3}
+  m_Name: 8_card
+  m_EditorClassIdentifier: 
+  cardName: Eight
+  pairName: Two
+  cardImage: {fileID: 21300000, guid: e287bc6e2775fbf45bd37bf9fa235132, type: 3}

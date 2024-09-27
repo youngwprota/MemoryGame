@@ -15,11 +15,11 @@ public class CardGridLayout : LayoutGroup
         if (columns == 0 || rows == 0) 
         {
             rows = 4;
-             columns = 5;   
+            columns = 5;   
         }
 
-        float parentWigth = rectTransform.rect.width;   
-        float parentHigth = rectTransform.rect.height;
+        float parentWigth = rectTransform.rect.width / 2;   
+        float parentHigth = parentWigth;
 
         float cardHeight = (parentHigth - 2 * preferredTopPadding - spacing.y * (rows - 1)) / rows;
         float cardWidth = cardHeight;
@@ -30,7 +30,10 @@ public class CardGridLayout : LayoutGroup
             cardHeight = cardWidth;
         }
 
-        cardSize = new Vector2(cardWidth, cardHeight);
+        cardSize = new Vector2(2.5f * cardWidth, 2.5f * cardHeight);
+
+        //Debug.Log("parentWidth: " + parentWigth + ", parentHeight: " + parentHigth);
+        //Debug.Log("cardWidth: " + cardWidth + ", cardHeight: " + cardHeight);
 
         padding.left = Mathf.FloorToInt((parentWigth - columns * cardWidth - spacing.x * (columns - 1)) / 2);
         padding.top = Mathf.FloorToInt((parentHigth - rows * cardHeight - spacing.y * (rows - 1)) / 2); 
