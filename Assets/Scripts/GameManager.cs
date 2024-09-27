@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
     {
         cardSelectionState = new CardSelectionState(this);
         pairSelectionState = new PairSelectionState(this);
-        memorizeCardsState = new MemorizeCardsState(this, 0.5f);
-        matchingCardsState = new MatchingCardsState(this, 0.2f);
+        memorizeCardsState = new MemorizeCardsState(this, 0.1f);
+        matchingCardsState = new MatchingCardsState(this, 0.1f);
         pauseGameState = new PauseGameState(this);
         endGameState = new EndGameState(this);
 
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitAndMemorizeCards()
     {
         canSelect = false;  
-        yield return new WaitForSeconds(1.5f);  
+        yield return new WaitForSeconds(0.5f);  
 
         TransitionState(memorizeCardsState);
         canSelect = true; 

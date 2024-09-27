@@ -22,7 +22,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler
     public HideAwayState hideAwayState;
 
     float cardScale = 1.0f;
-    float flipSpeed = 5.0f;
+    float flipSpeed = 10.0f;
     float flipTolerance = 0.05f;
 
     void Start()
@@ -85,7 +85,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler
 
     public void Flip()
     {
-        // Проверка: можно ли сейчас выбирать карты
         if (!gameManager.CanSelectCards) return;
 
         if (backFace.gameObject.activeSelf == true)
@@ -107,7 +106,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler
             {
                 ChangeScale(1.0f);
                 TransitionState(this.frontState);
-                gameManager.SetSelectedCard(this.gameObject);  // Сигнализируем GameManager о выборе карты
+                gameManager.SetSelectedCard(this.gameObject);  
             }
         }
     }
@@ -139,7 +138,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        // Проверка на возможность взаимодействия с картами
         if (gameManager.CanSelectCards)
         {
             actualState.OnClickAction();
