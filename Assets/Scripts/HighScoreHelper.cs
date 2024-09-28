@@ -49,12 +49,12 @@ public static class HighScoreHelper
 
         while (highScores.entryList.Count > entryListSize && highScores.entryList.Count > 0)
         {
-            int minScore = int.MaxValue;
+            int minScore = int.MinValue;
             ScoreEntry minScoreEntry = null;
 
             foreach (ScoreEntry se in highScores.entryList)
             {
-                if (minScore > se.score)
+                if (minScore < se.score)
                 {
                     minScore = se.score;
                     minScoreEntry = se;
