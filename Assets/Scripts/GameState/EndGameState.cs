@@ -12,10 +12,10 @@ public class EndGameState : GameState
 	{
 		base.EnterState();
 
-		//TimerController tc = GameObject.FindObjectOfType<TimerController>();
-		//tc.PauseGame();
+		TimerController tc = GameObject.FindObjectOfType<TimerController>();
+		tc.PauseGame();
 
-		//gameManager.uiController.ActivateEndPanel();
+		gameManager.uiController.ActivateEndPanel();
 	}
 
 	public override void UpdateAction()
