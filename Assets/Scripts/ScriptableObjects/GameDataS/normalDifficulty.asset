@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: normalDifficulty
   m_EditorClassIdentifier: 
   difficulty: 1
-  rows: 6
-  columns: 6
+  rows: 8
+  columns: 8
   background: {fileID: 21300000, guid: f04026df98f4532449879d6ccba234b7, type: 3}
   preferredTopBottomPadding: 20
   spacing: {x: 40, y: 40}
