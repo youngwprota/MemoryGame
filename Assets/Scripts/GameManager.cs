@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     GameState gameState;
 
     public UIController uiController;
+    public AudioManager audioManager;
 
     public CardSelectionState cardSelectionState;
     public PairSelectionState pairSelectionState;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     int cardCount;
     int movesCount;
-    private bool canSelect = true;  // Новый флаг для управления выбором карт
+    private bool canSelect = true;  
 
     public int CardCount
     {

@@ -11,8 +11,9 @@ public class EndGameState : GameState
 	public override void EnterState()
 	{
 		base.EnterState();
+        gameManager.audioManager.Play("Win");
 
-		TimerController tc = GameObject.FindObjectOfType<TimerController>();
+        TimerController tc = GameObject.FindObjectOfType<TimerController>();
 		tc.PauseGame();
 
 		gameManager.uiController.ActivateEndPanel();
