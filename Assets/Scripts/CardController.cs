@@ -12,6 +12,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler
     public CardSO cardType;
 
     GameManager gameManager;
+    public AudioManager audioManager;
 
     public CardState actualState;
     public FrontState frontState;
@@ -28,6 +29,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler
     void Start()
     {
         gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
+        audioManager = gameManager.audioManager;
 
         frontState = new FrontState(this);
         backState = new BackState(this);

@@ -121,6 +121,7 @@ MonoBehaviour:
   frontFace: {fileID: 3689487162473178351}
   backFace: {fileID: 5571209278922593673}
   cardType: {fileID: 11400000, guid: 14384b50575ab0449873daec95712b76, type: 2}
+  audioManager: {fileID: 0}
 --- !u!212 &-3158565298982974902
 SpriteRenderer:
   m_ObjectHideFlags: 0
